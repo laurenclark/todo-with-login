@@ -164,3 +164,41 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
 }
+
+.container {
+    margin: 0 auto;
+}
+
+input[type='text'] {
+    border: 2px solid grey;
+    padding: 0 10px;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 30vw;
+    height: 46px;
+    margin: 0 20px;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 1.5;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+}
+
+h1::after {
+    content: '.';
+    color: var(--accent);
+}
+
+form {
+    display: flex;
+    position: relative;
+}
+
+@media only screen and (min-width: 992px) {
+    .container {
+        max-width: 60vw;
+    }
+}

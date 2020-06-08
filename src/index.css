@@ -146,6 +146,20 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.legacy-sizing {
+    box-sizing: content-box;
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;

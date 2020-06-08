@@ -5,8 +5,7 @@ import TodoForm from './TodoForm';
 
 function Todos() {
     return (
-        <div>
-            <Header />
+        <div className="container">
             <h1>Todo List</h1>
             <TodoForm />
             <TodoList />

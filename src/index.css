@@ -169,6 +169,10 @@ code {
     margin: 0 auto;
 }
 
+strong {
+    font-weight: bold;
+}
+
 input[type='text'] {
     border: 2px solid grey;
     padding: 0 10px;

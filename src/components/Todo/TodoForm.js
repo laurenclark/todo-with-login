@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
+import Button from '../UI/Button';
 
 function TodoForm() {
     const [theDate, setTheDate] = useState(new Date());
@@ -21,7 +22,13 @@ function TodoForm() {
                 selected={theDate}
                 onChange={(date) => setTheDate(date)}
             />
-            <button>Add Todo</button>
+            <Button
+                size="large"
+                bgColor="var(--action)"
+                color="var(--primary)"
+                hollow={false}>
+                Add Todo
+            </Button>
         </form>
     );
 }

@@ -1,13 +1,15 @@
-import React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
 import TodoItem from './TodoItem';
+import TodoListStyle from './styles/TodoList';
 
 function TodoList() {
     return (
-        <div>
+        <ul css={TodoListStyle}>
             <TodoItem />
             <TodoItem />
             <TodoItem />
-        </div>
+        </ul>
     );
 }
 

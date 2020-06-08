@@ -12,6 +12,11 @@ function TodoForm() {
         day: 'numeric'
     };
 
+    const buttonStyles = {
+        position: 'absolute',
+        right: '89px'
+    };
+
     console.log(theDate.toLocaleDateString('en-GB', options));
 
     return (
@@ -23,6 +28,7 @@ function TodoForm() {
                 onChange={(date) => setTheDate(date)}
             />
             <Button
+                uniqueStyle={buttonStyles}
                 size="large"
                 bgColor="var(--action)"
                 color="var(--primary)"

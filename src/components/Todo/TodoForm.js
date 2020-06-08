@@ -14,13 +14,17 @@ function TodoForm() {
 
     const buttonStyles = {
         position: 'absolute',
-        right: '89px'
+        right: '1vw'
+    };
+
+    const formStyle = {
+        marginBottom: '1rem'
     };
 
     console.log(theDate.toLocaleDateString('en-GB', options));
 
     return (
-        <form>
+        <form style={formStyle}>
             <input type="text" placeholder="Wash dishes..." />
             <DatePicker
                 dateFormat="dd/MM/yyyy"

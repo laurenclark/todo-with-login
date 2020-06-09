@@ -14,13 +14,13 @@ function TodoList() {
         <ul css={TodoListStyle}>
             {allTodos &&
                 sortedTodos &&
-                sortedTodos.map((entry) => (
+                sortedTodos.map(({ id, text, date, complete }) => (
                     <TodoItem
-                        key={entry.id}
-                        entryId={entry.id}
-                        entryText={entry.text}
-                        entryDate={entry.date}
-                        entryComplete={entry.complete}
+                        key={id}
+                        entryId={id}
+                        entryText={text}
+                        entryDate={date}
+                        entryComplete={complete}
                     />
                 ))}
             {allTodos.length === 0 && <h2>Nothing To Do 🎉</h2>}

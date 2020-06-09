@@ -17,18 +17,20 @@ function TodoForm() {
     return (
         <form>
             <input type="text" placeholder="Wash dishes..." />
-            <DatePicker
-                date={date}
-                onDateChange={setDate}
-                format="dd/MM/yyyy"
-                locale={enGB}>
-                {({ inputProps, focused }) => (
-                    <input
-                        className={'input' + (focused ? ' -focused' : '')}
-                        {...inputProps}
-                    />
-                )}
-            </DatePicker>
+            <span className="datepicker--icon">
+                <DatePicker
+                    date={date}
+                    onDateChange={setDate}
+                    format="dd/MM/yyyy"
+                    locale={enGB}>
+                    {({ inputProps, focused }) => (
+                        <input
+                            className={'input' + (focused ? ' -focused' : '')}
+                            {...inputProps}
+                        />
+                    )}
+                </DatePicker>
+            </span>
             <Button
                 size="large"
                 bgColor="var(--action)"

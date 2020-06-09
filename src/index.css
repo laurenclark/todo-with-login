@@ -206,17 +206,35 @@ form {
     padding: 0 2rem;
 }
 
+.datepicker--icon {
+    position: relative;
+}
+
+.datepicker--icon::after {
+    content: '';
+    position: absolute;
+    background: url(https://icon.now.sh/date_range/25);
+    height: 25px;
+    width: 25px;
+    right: 10px;
+    top: 8px;
+    display: inline-block;
+}
+
 @media only screen and (min-width: 769px) {
     .container {
         max-width: 80vw;
     }
     form {
-        grid-gap: 30px;
-        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 3fr));
     }
 }
 @media only screen and (min-width: 992px) {
     .container {
-        max-width: 60vw;
+        max-width: 70vw;
+    }
+    form {
+        grid-gap: 30px;
+        grid-template-columns: 2fr 1fr 1fr;
     }
 }

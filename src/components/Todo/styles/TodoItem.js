@@ -18,10 +18,10 @@ const TodoItemStyle = css`
         resize: none;
     }
 
-    .date {
+    .nice-dates input {
+        border: none;
         text-align: center;
-        font-size: 1.3rem;
-        color: grey;
+        color: gray;
     }
 
     .form-control {

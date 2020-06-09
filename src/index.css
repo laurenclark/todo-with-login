@@ -168,7 +168,7 @@ code {
 
 .container {
     margin: 0 auto;
-    max-width: 95vw;
+    max-width: 90vw;
 }
 
 strong {
@@ -210,9 +210,9 @@ h1::after {
 
 form {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 3fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 3fr));
     grid-gap: 5px;
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
 .datepicker--icon {
@@ -228,6 +228,12 @@ form {
     right: 10px;
     top: 8px;
     display: inline-block;
+}
+
+@media only screen and (min-width: 500px) {
+    form {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+    }
 }
 
 @media only screen and (min-width: 769px) {

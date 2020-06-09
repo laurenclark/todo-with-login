@@ -5,23 +5,31 @@ import 'react-nice-dates/build/style.css';
 import Button from '../UI/Button';
 
 function TodoForm() {
-    const [date, setDate] = useState(new Date());
-    const options = {
-        year: 'numeric',
-        month: 'numeric',
-        day: 'numeric'
-    };
+    const [todo, setTodo] = useState({ item: '', date: new Date() });
 
-    console.log(date.toLocaleDateString('en-GB', options));
+    function handleChange(e) {
+        setTodo({
+            ...todo,
+            [e.target.name]: e.target.value
+        });
+    }
 
     return (
         <form>
-            <input type="text" placeholder="Wash dishes..." />
+            <input
+                type="text"
+                placeholder="Wash dishes..."
+                name="item"
+                value={todo.item}
+                onChange={handleChange}
+            />
             <span className="datepicker--icon">
                 <DatePicker
-                    date={date}
-                    onDateChange={setDate}
+                    date={todo.date}
+                    onDateChange={(date) => setTodo({ ...todo, date: date })}
                     format="dd/MM/yyyy"
+                    name="date"
+                    value={todo.date}
                     locale={enGB}>
                     {({ inputProps, focused }) => (
                         <input

@@ -8,6 +8,8 @@
     },
     "dependencies": {
         "@emotion/core": "^10.0.28",
+        "@snowpack/plugin-babel": "^1.0.0",
+        "@snowpack/plugin-webpack": "^1.1.5",
         "date-fns": "^2.14.0",
         "react": "^16.13.0",
         "react-datepicker": "^3.0.0",

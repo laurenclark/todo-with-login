@@ -4,12 +4,14 @@ import { jsx } from '@emotion/core';
 import TodoItemStyle from './styles/TodoItem';
 import Button from '../UI/Button';
 import { Context } from '../../Context';
+import { format } from 'date-fns';
 
 function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
     const { addTodo, removeTodo } = useContext(Context);
+    const formatDate = format(new Date(entryDate), 'dd/MM/yyyy');
     const [entry, setEntry] = useState({
         text: entryText,
-        date: entryDate,
+        date: formatDate,
         complete: entryComplete
     });
 
@@ -39,6 +41,7 @@ function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
             </div>
 
             <textarea value={entry.text} name="text" onChange={handleChange} />
+
             <input
                 className="date"
                 onChange={handleChange}

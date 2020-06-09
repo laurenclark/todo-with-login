@@ -4,13 +4,19 @@ import { jsx } from '@emotion/core';
 import TodoItemStyle from './styles/TodoItem';
 import Button from '../UI/Button';
 
-function TodoItem({ date, deleteTodo, entry }) {
+function TodoItem({ entryDate, deleteTodo, entryText }) {
     const [checked, setChecked] = useState(false);
-    const [text, setText] = useState(entry);
+    const [text, setText] = useState(entryText);
+    const [date, setDate] = useState(entryDate);
 
     const handleInput = (e) => {
         const { value } = e.target;
         setText(value);
+    };
+
+    const handleDate = (e) => {
+        const { value } = e.target;
+        setDate(value);
     };
 
     const handleChange = () => {
@@ -32,8 +38,12 @@ function TodoItem({ date, deleteTodo, entry }) {
             </div>
 
             <textarea value={text} onChange={handleInput} />
-
-            <p className="date">{date}</p>
+            <input
+                className="date"
+                onChange={handleDate}
+                type="text"
+                value={date}
+            />
 
             <Button bgColor="var(--danger)" hollow={true} onClick={deleteTodo}>
                 <strong>Delete</strong>

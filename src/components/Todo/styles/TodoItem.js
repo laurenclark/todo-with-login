@@ -18,7 +18,7 @@ const TodoItemStyle = css`
         resize: none;
     }
 
-    .nice-dates input {
+    .date {
         border: none;
         text-align: center;
         color: gray;

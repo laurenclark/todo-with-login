@@ -7,10 +7,9 @@ import TodoListStyle from './styles/TodoList';
 function TodoList() {
     return (
         <ul css={TodoListStyle}>
-            <TodoItem entry="Some entry" date="12/09/2020" />
-            <TodoItem entry="Some entry" date="12/09/2020" />
-            <TodoItem entry="Some entry" date="12/09/2020" />
-            <TodoItem entry="Some entry" date="12/09/2020" />
+            <TodoItem entryText="Some entry" entryDate="12/09/2020" />
+            <TodoItem entryText="Some entry" entryDate="12/09/2020" />
+            <TodoItem entryText="Some entry" entryDate="12/09/2020" />
         </ul>
     );
 }

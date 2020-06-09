@@ -6,45 +6,45 @@ import Button from '../UI/Button';
 import { Context } from '../../Context';
 
 function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
-    const [checked, setChecked] = useState(entryComplete);
-    const [text, setText] = useState(entryText);
-    const [date, setDate] = useState(entryDate);
-    const { removeTodo } = useContext(Context);
+    const { addTodo, removeTodo } = useContext(Context);
+    const [entry, setEntry] = useState({
+        text: entryText,
+        date: entryDate,
+        complete: entryComplete
+    });
 
-    function handleInput(e) {
-        const { value } = e.target;
-        setText(value);
+    function handleChange(e) {
+        setEntry({
+            ...entry,
+            [e.target.name]: e.target.value
+        });
     }
 
-    function handleDate(e) {
-        const { value } = e.target;
-        setDate(value);
-    }
-
-    function toggleChecked() {
-        setChecked((prev) => !prev);
+    function toggleComplete() {
+        setEntry({ ...entry, complete: !entry.complete });
     }
 
     return (
         <li id={entryId} css={TodoItemStyle}>
-            <div onClick={toggleChecked} className="form-control custom-inputs">
+            <div className="form-control custom-inputs">
                 <label>
                     <input
-                        checked={checked}
-                        onChange={toggleChecked}
+                        checked={entry.complete}
+                        onChange={toggleComplete}
                         type="checkbox"
-                        value="complete"
+                        name="complete"
                     />
                     <span className="checkmark"></span>
                 </label>
             </div>
 
-            <textarea value={text} onChange={handleInput} />
+            <textarea value={entry.text} name="text" onChange={handleChange} />
             <input
                 className="date"
-                onChange={handleDate}
+                onChange={handleChange}
                 type="text"
-                value={date}
+                name="date"
+                value={entry.date}
             />
 
             <Button

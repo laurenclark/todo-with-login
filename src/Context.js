@@ -4,9 +4,9 @@ const Context = React.createContext();
 
 function ContextProvider({ children }) {
     const [allTodos, setTodos] = useState([
-        { id: 0, text: 'Eat breakfast', date: new Date(), complete: true },
+        { id: 0, text: 'Eat breakfast', date: new Date(), complete: false },
         { id: 1, text: 'Do laundry', date: new Date(), complete: false },
-        { id: 2, text: 'Finish project', date: new Date(), complete: false }
+        { id: 2, text: 'Finish project', date: new Date(), complete: true }
     ]);
 
     const [username, setUsername] = useState('Lauren');
@@ -30,12 +30,15 @@ function ContextProvider({ children }) {
         setTodos((prevItems) => [...prevItems, newItem]);
     }
 
+    function updateTodo(item) {}
+
     function removeTodo(id) {
         setTodos((prevItems) => prevItems.filter((item) => item.id !== id));
     }
 
     return (
-        <Context.Provider value={{ allTodos, addTodo, removeTodo }}>
+        <Context.Provider
+            value={{ username, allTodos, addTodo, removeTodo, sortTodos }}>
             {children}
         </Context.Provider>
     );

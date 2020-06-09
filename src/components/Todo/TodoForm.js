@@ -7,7 +7,7 @@ import { Context } from '../../Context';
 
 function TodoForm() {
     const [todo, setTodo] = useState({
-        item: '',
+        text: '',
         date: new Date(),
         complete: false
     });
@@ -29,14 +29,19 @@ function TodoForm() {
             <input
                 type="text"
                 placeholder="Wash dishes..."
-                name="item"
-                value={todo.item}
+                name="text"
+                value={todo.text}
                 onChange={handleChange}
             />
             <span className="datepicker--icon">
                 <DatePicker
                     date={todo.date}
-                    onDateChange={(date) => setTodo({ ...todo, date: date })}
+                    onDateChange={(date) =>
+                        setTodo({
+                            ...todo,
+                            date: date
+                        })
+                    }
                     format="dd/MM/yyyy"
                     name="date"
                     value={todo.date}

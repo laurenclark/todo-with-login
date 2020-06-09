@@ -4,9 +4,9 @@ const Context = React.createContext();
 
 function ContextProvider({ children }) {
     const [allTodos, setTodos] = useState([
-        { entry: 'Eat breakfast', date: '10/07/2020', complete: true },
-        { entry: 'Do laundry', date: '10/07/2020', complete: false },
-        { entry: 'Finish project', date: '11/07/2020', complete: false }
+        { text: 'Eat breakfast', date: '10/07/2020', complete: true },
+        { text: 'Do laundry', date: '10/07/2020', complete: false },
+        { text: 'Finish project', date: '11/07/2020', complete: false }
     ]);
 
     function addTodo(newItem) {

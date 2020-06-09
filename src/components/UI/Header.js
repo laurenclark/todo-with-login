@@ -3,7 +3,7 @@ import React from 'react';
 import Button from './Button';
 import { jsx, css } from '@emotion/core';
 
-function Header() {
+function Header({ username }) {
     const headerStyle = css({
         background: 'whitesmoke',
         borderBottom: '2px solid #ededed',
@@ -28,7 +28,7 @@ function Header() {
                     alt=""
                 />
                 <p>
-                    Logged in as <strong>John Doe</strong>
+                    Logged in as <strong>{username}</strong>
                 </p>
                 <Button>Logout</Button>
             </div>

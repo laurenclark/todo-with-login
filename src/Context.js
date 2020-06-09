@@ -9,6 +9,23 @@ function ContextProvider({ children }) {
         { id: 2, text: 'Finish project', date: new Date(), complete: false }
     ]);
 
+    const [username, setUsername] = useState('Lauren');
+
+    useEffect(() => {
+        setTodos(sortTodos(allTodos));
+    }, [allTodos]);
+
+    function sortTodos(todos) {
+        return todos.sort(function (a, b) {
+            // Sort by date
+            if (a.date > b.date) return -1;
+            if (a.date < b.date) return 1;
+            // Sort by completed
+            if (a.complete > b.complete) return -1;
+            if (a.complete < b.complete) return 1;
+        });
+    }
+
     function addTodo(newItem) {
         setTodos((prevItems) => [...prevItems, newItem]);
     }

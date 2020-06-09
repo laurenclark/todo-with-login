@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { jsx } from '@emotion/core';
 import TodoItemStyle from './styles/TodoItem';
+import Button from '../UI/Button';
 
 function TodoItem() {
     const [checked, setChecked] = useState(false);
@@ -14,7 +15,9 @@ function TodoItem() {
         <li css={TodoItemStyle}>
             <input type="checkbox" checked={checked} onChange={handleChange} />
             <p>Todo Item</p>
-            <button>Delete</button>
+            <Button bgColor="var(--danger)" hollow={true}>
+                Delete
+            </Button>
         </li>
     );
 }

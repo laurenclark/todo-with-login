@@ -134,7 +134,7 @@ table {
     --accent: #6558f6;
     --secondary-light: #dfe6ed;
     --action: #51ab9f;
-    --danger: #d68b94;
+    --danger: #d34a5b;
 }
 
 body {
@@ -205,10 +205,15 @@ form {
 
 @media only screen and (min-width: 769px) {
     .container {
-        max-width: 60vw;
+        max-width: 80vw;
     }
     form {
         grid-gap: 30px;
         grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .container {
+        max-width: 60vw;
     }
 }

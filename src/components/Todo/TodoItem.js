@@ -1,30 +1,32 @@
 /** @jsx jsx */
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { jsx } from '@emotion/core';
 import TodoItemStyle from './styles/TodoItem';
 import Button from '../UI/Button';
+import { Context } from '../../Context';
 
-function TodoItem({ entryDate, deleteTodo, entryText }) {
+function TodoItem({ entryDate, entryText, entryId }) {
     const [checked, setChecked] = useState(false);
     const [text, setText] = useState(entryText);
     const [date, setDate] = useState(entryDate);
+    const { removeTodo } = useContext(Context);
 
-    const handleInput = (e) => {
+    function handleInput(e) {
         const { value } = e.target;
         setText(value);
-    };
+    }
 
-    const handleDate = (e) => {
+    function handleDate(e) {
         const { value } = e.target;
         setDate(value);
-    };
+    }
 
-    const handleChange = () => {
+    function handleChange() {
         setChecked((prev) => !prev);
-    };
+    }
 
     return (
-        <li css={TodoItemStyle}>
+        <li id={entryId} css={TodoItemStyle}>
             <div className="form-control custom-inputs">
                 <label>
                     <input
@@ -45,7 +47,10 @@ function TodoItem({ entryDate, deleteTodo, entryText }) {
                 value={date}
             />
 
-            <Button bgColor="var(--danger)" hollow={true} onClick={deleteTodo}>
+            <Button
+                bgColor="var(--danger)"
+                hollow={true}
+                handler={() => removeTodo(entryId)}>
                 <strong>Delete</strong>
             </Button>
         </li>

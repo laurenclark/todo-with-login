@@ -12,10 +12,8 @@ function TodoList() {
         <ul css={TodoListStyle}>
             {allTodos.map((entry, index) => (
                 <TodoItem
-                    // Note - map index isn't ideal here, normally this would be a fixed value retrieved
-                    // from API/Database and would be a unique identifier. I could use 'uuid' from NPM
-                    // for this, but I won't because in a real scenario this would be from an API!
                     key={index}
+                    entryId={index}
                     entryText={entry.text}
                     entryDate={entry.date}
                 />

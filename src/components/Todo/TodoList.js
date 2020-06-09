@@ -10,10 +10,10 @@ function TodoList() {
     console.log(allTodos);
     return (
         <ul css={TodoListStyle}>
-            {allTodos.map((entry, index) => (
+            {allTodos.map((entry) => (
                 <TodoItem
-                    key={index}
-                    entryId={index}
+                    key={entry.id}
+                    entryId={entry.id}
                     entryText={entry.text}
                     entryDate={entry.date}
                 />

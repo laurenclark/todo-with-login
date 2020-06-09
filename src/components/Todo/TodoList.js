@@ -7,10 +7,12 @@ import { Context } from '../../Context';
 
 function TodoList() {
     const { allTodos } = useContext(Context);
-    console.log(allTodos);
+
+    const mostRectentTodos = allTodos.sort((a, b) => b.date - a.date);
+
     return (
         <ul css={TodoListStyle}>
-            {allTodos.map((entry) => (
+            {mostRectentTodos.map((entry) => (
                 <TodoItem
                     key={entry.id}
                     entryId={entry.id}

@@ -14,9 +14,14 @@ function TodoItem() {
     return (
         <li css={TodoItemStyle}>
             <input type="checkbox" checked={checked} onChange={handleChange} />
-            <p>Todo Item</p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse ac ante eleifend, faucibus purus a, venenatis lorem.
+                Nunc accumsan urna ligula, nec sollicitudin ipsum consectetur a.
+            </p>
+            <p className="date">12/09/2020</p>
             <Button bgColor="var(--danger)" hollow={true}>
-                Delete
+                <strong>Delete</strong>
             </Button>
         </li>
     );

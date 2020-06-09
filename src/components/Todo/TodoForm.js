@@ -20,7 +20,7 @@ function TodoForm() {
             <DatePicker
                 date={date}
                 onDateChange={setDate}
-                format="dd/mm/yyyy"
+                format="dd/MM/yyyy"
                 locale={enGB}>
                 {({ inputProps, focused }) => (
                     <input

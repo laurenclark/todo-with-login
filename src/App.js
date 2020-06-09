@@ -11,7 +11,7 @@ function App() {
         <div className="App">
             {username && <Header username={username} />}
             <Switch>
-                <Route exact path="/">
+                <Route exact path="/(|home)">
                     <Login />
                 </Route>
 

@@ -1,9 +1,13 @@
 /** @jsx jsx */
-import React from 'react';
+import React, { useContext } from 'react';
 import Button from './Button';
 import { jsx, css } from '@emotion/core';
+import { useHistory } from 'react-router-dom';
+import { Context } from '../../Context';
 
 function Header({ username }) {
+    const history = useHistory();
+    const { setUsername } = useContext(Context);
     const headerStyle = css({
         background: 'whitesmoke',
         borderBottom: '2px solid #ededed',
@@ -20,6 +24,11 @@ function Header({ username }) {
         }
     });
 
+    function logout() {
+        setUsername('');
+        history.push('/');
+    }
+
     return (
         <header css={headerStyle}>
             <div css={divStyle}>
@@ -30,7 +39,7 @@ function Header({ username }) {
                 <p>
                     Logged in as <strong>{username}</strong>
                 </p>
-                <Button>Logout</Button>
+                <Button handler={logout}>Logout</Button>
             </div>
         </header>
     );

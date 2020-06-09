@@ -8,7 +8,6 @@ function ContextProvider({ children }) {
         { id: 1, text: 'Do laundry', date: new Date(), complete: false },
         { id: 2, text: 'Finish project', date: new Date(), complete: true }
     ]);
-
     const [username, setUsername] = useState('Lauren');
 
     useEffect(() => {
@@ -36,9 +35,19 @@ function ContextProvider({ children }) {
         setTodos((prevItems) => prevItems.filter((item) => item.id !== id));
     }
 
+    function login(username) {
+        setUsername(username);
+    }
     return (
         <Context.Provider
-            value={{ username, allTodos, addTodo, removeTodo, sortTodos }}>
+            value={{
+                username,
+                allTodos,
+                addTodo,
+                removeTodo,
+                sortTodos,
+                setUsername
+            }}>
             {children}
         </Context.Provider>
     );

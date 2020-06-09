@@ -21,17 +21,17 @@ function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
         setDate(value);
     }
 
-    function handleChange() {
+    function toggleChecked() {
         setChecked((prev) => !prev);
     }
 
     return (
         <li id={entryId} css={TodoItemStyle}>
-            <div onClick={handleChange} className="form-control custom-inputs">
+            <div onClick={toggleChecked} className="form-control custom-inputs">
                 <label>
                     <input
                         checked={checked}
-                        onChange={handleChange}
+                        onChange={toggleChecked}
                         type="checkbox"
                         value="complete"
                     />

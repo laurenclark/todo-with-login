@@ -13,7 +13,17 @@ function TodoItem() {
 
     return (
         <li css={TodoItemStyle}>
-            <input type="checkbox" checked={checked} onChange={handleChange} />
+            <div className="form-control custom-inputs">
+                <label>
+                    <input
+                        checked={checked}
+                        onChange={handleChange}
+                        type="checkbox"
+                        value="complete"
+                    />
+                    <span className="checkmark"></span>
+                </label>
+            </div>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Suspendisse ac ante eleifend, faucibus purus a, venenatis lorem.

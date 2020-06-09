@@ -6,21 +6,24 @@ import TodoListStyle from './styles/TodoList';
 import { Context } from '../../Context';
 
 function TodoList() {
-    const { allTodos } = useContext(Context);
+    const { allTodos, sortTodos } = useContext(Context);
 
-    const mostRectentTodos = allTodos.sort((a, b) => b.date - a.date);
+    const sortedTodos = sortTodos(allTodos);
 
     return (
         <ul css={TodoListStyle}>
-            {mostRectentTodos.map((entry) => (
-                <TodoItem
-                    key={entry.id}
-                    entryId={entry.id}
-                    entryText={entry.text}
-                    entryDate={entry.date}
-                    entryComplete={entry.complete}
-                />
-            ))}
+            {allTodos &&
+                sortedTodos &&
+                sortedTodos.map((entry) => (
+                    <TodoItem
+                        key={entry.id}
+                        entryId={entry.id}
+                        entryText={entry.text}
+                        entryDate={entry.date}
+                        entryComplete={entry.complete}
+                    />
+                ))}
+            {allTodos.length === 0 && <h2>Nothing To Do 🎉</h2>}
         </ul>
     );
 }

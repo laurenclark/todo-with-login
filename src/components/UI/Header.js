@@ -5,6 +5,8 @@ import { jsx, css } from '@emotion/core';
 
 function Header() {
     const headerStyle = css({
+        background: 'whitesmoke',
+        borderBottom: '2px solid #ededed',
         display: 'flex',
         flexFlow: 'row-reverse',
         padding: '5px 20px'

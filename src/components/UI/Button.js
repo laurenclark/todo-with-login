@@ -3,7 +3,15 @@ import React from 'react';
 import { jsx, css } from '@emotion/core';
 import { PropTypes } from 'prop-types';
 
-function Button({ children, bgColor, fgColor, size, hollow, uniqueStyle }) {
+function Button({
+    children,
+    bgColor,
+    fgColor,
+    size,
+    hollow,
+    uniqueStyle,
+    handler
+}) {
     const ButtonStyle = css({
         borderRadius: '4px',
         background: `${hollow ? 'none' : bgColor}`,
@@ -15,7 +23,11 @@ function Button({ children, bgColor, fgColor, size, hollow, uniqueStyle }) {
         cursor: 'pointer'
     });
 
-    return <button css={[ButtonStyle, uniqueStyle]}>{children}</button>;
+    return (
+        <button onClick={handler} css={[ButtonStyle, uniqueStyle]}>
+            {children}
+        </button>
+    );
 }
 
 Button.defaultProps = {

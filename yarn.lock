@@ -2462,7 +2462,7 @@ data-urls@^1.1.0:
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
 
-date-fns@^2.0.1:
+date-fns@^2.0.1, date-fns@^2.14.0:
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.14.0.tgz#359a87a265bb34ef2e38f93ecf63ac453f9bc7ba"
   integrity sha512-1zD+68jhFgDIM0rF05rcwYO8cExdNqxjq4xP1QKM60Q45mnO6zaMWB4tOzrIr4M4GSLntsKeE4c9Bdl2jhL/yw==
@@ -4930,6 +4930,13 @@ react-is@^16.12.0, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-nice-dates@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/react-nice-dates/-/react-nice-dates-3.0.4.tgz#3d97400e2dd95ea74f114c4b2173e11b873ce25b"
+  integrity sha512-WEcLUNffwb6S8PagnEugR2I62V4aI653kcOojYPEkKTiEKZPC3sB1soAhQhUSVL1yMrFxF9imNc9umnNYq9q1Q==
+  dependencies:
+    classnames "^2.2.6"
 
 react-onclickoutside@^6.9.0:
   version "6.9.0"

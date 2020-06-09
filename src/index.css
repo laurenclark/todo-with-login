@@ -168,6 +168,7 @@ code {
 
 .container {
     margin: 0 auto;
+    max-width: 95vw;
 }
 
 strong {
@@ -179,9 +180,7 @@ input[type='text'] {
     padding: 0 10px;
     border-radius: 4px;
     width: 100%;
-    max-width: 30vw;
     height: 46px;
-    margin: 0 20px;
     font-size: 1.3rem;
 }
 
@@ -199,12 +198,16 @@ h1::after {
 }
 
 form {
-    display: flex;
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+    grid-gap: 5px;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 769px) {
     .container {
         max-width: 60vw;
+    }
+    form {
+        grid-gap: 30px;
     }
 }

@@ -199,7 +199,7 @@ h1::after {
 
 form {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 3fr));
     grid-gap: 5px;
 }
 
@@ -209,5 +209,6 @@ form {
     }
     form {
         grid-gap: 30px;
+        grid-template-columns: 2fr 1fr 1fr;
     }
 }

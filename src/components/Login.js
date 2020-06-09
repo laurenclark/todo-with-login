@@ -1,11 +1,50 @@
+/** @jsx jsx */
 import React from 'react';
+import Button from './UI/Button';
+import { jsx, css } from '@emotion/core';
 
 function Login() {
     return (
-        <form>
-            <input type="text" required />
-            <button>Login</button>
-        </form>
+        <div
+            css={css`
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 90vh;
+            `}>
+            <form
+                css={css`
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    border: 2px solid grey;
+                    background: var(--secondary);
+                    margin: 0 auto;
+                    min-height: 400px;
+                    min-width: 460px;
+                    text-align: center;
+                    align-items: center;
+                `}>
+                <img
+                    src="https://icon.now.sh/account_circle/99/9fadbb"
+                    alt=""
+                />
+                <input
+                    css={css`
+                        margin-top: 2rem;
+                    `}
+                    placeholder="Username"
+                    type="text"
+                    required
+                />
+                <Button
+                    uniqueStyle={{ marginTop: '2rem', padding: '20px 30px' }}
+                    bgColor="var(--accent)"
+                    size="large">
+                    Login
+                </Button>
+            </form>
+        </div>
     );
 }
 

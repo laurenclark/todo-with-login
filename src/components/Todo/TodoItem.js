@@ -4,8 +4,14 @@ import { jsx } from '@emotion/core';
 import TodoItemStyle from './styles/TodoItem';
 import Button from '../UI/Button';
 
-function TodoItem() {
+function TodoItem({ date, deleteTodo, entry }) {
     const [checked, setChecked] = useState(false);
+    const [text, setText] = useState(entry);
+
+    const handleInput = (e) => {
+        const { value } = e.target;
+        setText(value);
+    };
 
     const handleChange = () => {
         setChecked((prev) => !prev);
@@ -24,13 +30,12 @@ function TodoItem() {
                     <span className="checkmark"></span>
                 </label>
             </div>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse ac ante eleifend, faucibus purus a, venenatis lorem.
-                Nunc accumsan urna ligula, nec sollicitudin ipsum consectetur a.
-            </p>
-            <p className="date">12/09/2020</p>
-            <Button bgColor="var(--danger)" hollow={true}>
+
+            <textarea value={text} onChange={handleInput} />
+
+            <p className="date">{date}</p>
+
+            <Button bgColor="var(--danger)" hollow={true} onClick={deleteTodo}>
                 <strong>Delete</strong>
             </Button>
         </li>

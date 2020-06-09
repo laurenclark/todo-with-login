@@ -3,13 +3,18 @@ import { css } from '@emotion/core';
 const TodoItemStyle = css`
     display: grid;
     margin-top: 2rem;
-    grid-template-columns: 1fr 8fr 4fr 1fr;
+    grid-template-columns: 1fr;
     border-bottom: 2px solid lightgrey;
     padding: 2rem 1rem;
     align-items: center;
-
-    p {
+    @media (min-width: 992px) {
+        grid-template-columns: 1fr 8fr 4fr 1fr;
+    }
+    textarea {
         font-size: 1.2rem;
+        border: none;
+        font-family: sans-serif;
+        resize: none;
     }
 
     .date {
@@ -32,18 +37,13 @@ const TodoItemStyle = css`
         }
 
         &.custom-inputs {
-            margin-top: 20px;
             label {
                 display: inline-block;
                 position: relative;
-                padding: 10px 35px;
+                padding: 15px 0px;
                 margin-bottom: 12px;
                 cursor: pointer;
                 user-select: none;
-                &:focus,
-                &:visited,
-                &:active {
-                }
             }
 
             label.list {

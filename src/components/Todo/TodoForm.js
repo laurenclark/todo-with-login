@@ -1,11 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { enGB } from 'date-fns/locale';
 import { DatePicker } from 'react-nice-dates';
 import 'react-nice-dates/build/style.css';
 import Button from '../UI/Button';
+import { Context } from '../../Context';
 
 function TodoForm() {
-    const [todo, setTodo] = useState({ item: '', date: new Date() });
+    const [todo, setTodo] = useState({
+        item: '',
+        date: new Date(),
+        complete: false
+    });
+    const { addTodo } = useContext(Context);
+
+    function handleSubmit() {
+        console.log(todo);
+        addTodo(todo);
+    }
 
     function handleChange(e) {
         setTodo({
@@ -13,9 +24,8 @@ function TodoForm() {
             [e.target.name]: e.target.value
         });
     }
-
     return (
-        <form>
+        <form onSubmit={(e) => e.preventDefault()}>
             <input
                 type="text"
                 placeholder="Wash dishes..."
@@ -41,9 +51,11 @@ function TodoForm() {
             </span>
             <Button
                 size="large"
+                submit={true}
                 bgColor="var(--action)"
                 color="var(--primary)"
-                hollow={false}>
+                hollow={false}
+                handler={handleSubmit}>
                 Add Todo
             </Button>
         </form>

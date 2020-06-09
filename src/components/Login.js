@@ -11,6 +11,7 @@ function Login() {
                 flex-direction: column;
                 justify-content: center;
                 height: 90vh;
+                padding: 1rem;
             `}>
             <form
                 css={css`
@@ -20,10 +21,12 @@ function Login() {
                     border: 2px solid grey;
                     background: var(--secondary);
                     margin: 0 auto;
-                    min-height: 400px;
-                    min-width: 460px;
+                    min-height: 350px;
+                    max-width: 460px;
+                    width: 100%;
                     text-align: center;
                     align-items: center;
+                    padding: 2rem;
                 `}>
                 <img
                     src="https://icon.now.sh/account_circle/99/9fadbb"

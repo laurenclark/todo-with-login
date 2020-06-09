@@ -2,11 +2,10 @@ import { css } from '@emotion/core';
 
 const TodoItemStyle = css`
     display: grid;
-    margin-top: 2rem;
     grid-gap: 15px;
     grid-template-columns: 1fr;
     border-bottom: 2px solid lightgrey;
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
     align-items: center;
     @media (min-width: 992px) {
         grid-template-columns: 1fr 8fr 4fr 1fr;

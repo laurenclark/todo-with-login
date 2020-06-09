@@ -5,8 +5,8 @@ import TodoItemStyle from './styles/TodoItem';
 import Button from '../UI/Button';
 import { Context } from '../../Context';
 
-function TodoItem({ entryDate, entryText, entryId }) {
-    const [checked, setChecked] = useState(false);
+function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
+    const [checked, setChecked] = useState(entryComplete);
     const [text, setText] = useState(entryText);
     const [date, setDate] = useState(entryDate);
     const { removeTodo } = useContext(Context);
@@ -27,7 +27,7 @@ function TodoItem({ entryDate, entryText, entryId }) {
 
     return (
         <li id={entryId} css={TodoItemStyle}>
-            <div className="form-control custom-inputs">
+            <div onClick={handleChange} className="form-control custom-inputs">
                 <label>
                     <input
                         checked={checked}

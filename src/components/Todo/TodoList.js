@@ -18,6 +18,7 @@ function TodoList() {
                     entryId={entry.id}
                     entryText={entry.text}
                     entryDate={entry.date}
+                    entryComplete={entry.complete}
                 />
             ))}
         </ul>

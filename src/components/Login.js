@@ -1,9 +1,14 @@
 /** @jsx jsx */
-import React from 'react';
+import React, { useContext } from 'react';
 import Button from './UI/Button';
+import { Context } from '../Context';
 import { jsx, css } from '@emotion/core';
 
 function Login() {
+    const { username, setUsername } = useContext(Context);
+
+    setUsername('Lauren');
+
     return (
         <div
             css={css`

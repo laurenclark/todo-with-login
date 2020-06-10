@@ -40,6 +40,7 @@ function ContextProvider({ children }) {
         <Context.Provider
             value={{
                 username,
+                setUsername,
                 allTodos,
                 addTodo,
                 removeTodo,

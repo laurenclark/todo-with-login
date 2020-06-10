@@ -15,14 +15,17 @@ function ContextProvider({ children }) {
     }, [allTodos]);
 
     function sortTodos(todos) {
-        return todos.sort(function (a, b) {
-            // Sort by date
-            if (a.date > b.date) return -1;
-            if (a.date < b.date) return 1;
-            // Sort by completed
-            if (a.complete > b.complete) return -1;
-            if (a.complete < b.complete) return 1;
-        });
+        return todos
+            .sort(function (a, b) {
+                // Sort by date
+                if (a.date > b.date) return -1;
+                if (a.date < b.date) return 1;
+            })
+            .sort(function (a, b) {
+                // Sort by completed
+                if (a.complete > b.complete) return -1;
+                if (a.complete < b.complete) return 1;
+            });
     }
 
     function addTodo(newItem) {

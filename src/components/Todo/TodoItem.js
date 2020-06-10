@@ -4,15 +4,17 @@ import { jsx } from '@emotion/core';
 import TodoItemStyle from './styles/TodoItem';
 import Button from '../UI/Button';
 import { Context } from '../../Context';
+import { enGB } from 'date-fns/locale';
+import { DatePicker } from 'react-nice-dates';
+import 'react-nice-dates/build/style.css';
 import { format } from 'date-fns';
 
 function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
     const { updateTodo, removeTodo } = useContext(Context);
-    const formatDate = format(new Date(entryDate), 'dd/MM/yyyy');
     const [entry, setEntry] = useState({
         id: entryId,
         text: entryText,
-        date: formatDate,
+        date: entryDate,
         complete: entryComplete
     });
 
@@ -46,14 +48,25 @@ function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
             </div>
 
             <textarea value={entry.text} name="text" onChange={handleChange} />
-
-            <input
-                className="date"
-                onChange={handleChange}
-                type="text"
+            <DatePicker
+                date={entry.date}
+                onDateChange={(date) =>
+                    setEntry({
+                        ...entry,
+                        date: date
+                    })
+                }
+                format="dd/MM/yyyy"
                 name="date"
                 value={entry.date}
-            />
+                locale={enGB}>
+                {({ inputProps, focused }) => (
+                    <input
+                        className={'date input' + (focused ? ' -focused' : '')}
+                        {...inputProps}
+                    />
+                )}
+            </DatePicker>
 
             <Button
                 bgColor="var(--danger)"

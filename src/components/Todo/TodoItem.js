@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { jsx } from '@emotion/core';
 import TodoItemStyle from './styles/TodoItem';
 import Button from '../UI/Button';
@@ -7,13 +7,18 @@ import { Context } from '../../Context';
 import { format } from 'date-fns';
 
 function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
-    const { addTodo, removeTodo } = useContext(Context);
+    const { updateTodo, removeTodo } = useContext(Context);
     const formatDate = format(new Date(entryDate), 'dd/MM/yyyy');
     const [entry, setEntry] = useState({
+        id: entryId,
         text: entryText,
         date: formatDate,
         complete: entryComplete
     });
+
+    useEffect(() => {
+        updateTodo(entry);
+    }, [entry]);
 
     function handleChange(e) {
         setEntry({

@@ -5,9 +5,9 @@ const Context = React.createContext();
 function ContextProvider({ children }) {
     const [username, setUsername] = useState('Lauren');
     const [allTodos, setTodos] = useState([
-        { id: 0, text: 'Eat breakfast', date: new Date(), complete: false },
-        { id: 1, text: 'Do laundry', date: new Date(), complete: false },
-        { id: 2, text: 'Finish project', date: new Date(), complete: true }
+        { id: 1, text: 'Eat breakfast', date: new Date(), complete: false },
+        { id: 2, text: 'Do laundry', date: new Date(), complete: false },
+        { id: 3, text: 'Finish project', date: new Date(), complete: true }
     ]);
 
     useEffect(() => {
@@ -30,7 +30,21 @@ function ContextProvider({ children }) {
         setTodos((prevItems) => [...prevItems, newItem]);
     }
 
-    function updateTodo(id, item) {}
+    function updateTodo(entry) {
+        const itemPosition = allTodos
+            .map(function (x) {
+                return x.id;
+            })
+            .indexOf(entry.id);
+
+        setTodos((prevItems) => [
+            ...prevItems.slice(0, itemPosition),
+            entry,
+            ...prevItems.slice(itemPosition + 1)
+        ]);
+
+        console.log(allTodos);
+    }
 
     function removeTodo(id) {
         setTodos((prevItems) => prevItems.filter((item) => item.id !== id));
@@ -45,7 +59,8 @@ function ContextProvider({ children }) {
                 addTodo,
                 removeTodo,
                 sortTodos,
-                setUsername
+                setUsername,
+                updateTodo
             }}>
             {children}
         </Context.Provider>

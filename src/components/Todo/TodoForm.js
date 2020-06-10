@@ -8,13 +8,12 @@ import { Context } from '../../Context';
 
 function TodoForm() {
     const [todo, setTodo] = useState({
-        id: '',
+        id: uuidv4(),
         text: '',
         date: new Date(),
         complete: false
     });
     const { addTodo } = useContext(Context);
-
     function handleSubmit() {
         if (todo.text) {
             setTodo({

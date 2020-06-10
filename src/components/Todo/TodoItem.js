@@ -7,7 +7,6 @@ import { Context } from '../../Context';
 import { enGB } from 'date-fns/locale';
 import { DatePicker } from 'react-nice-dates';
 import 'react-nice-dates/build/style.css';
-import { format } from 'date-fns';
 
 function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
     const { updateTodo, removeTodo } = useContext(Context);

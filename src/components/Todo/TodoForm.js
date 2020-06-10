@@ -16,11 +16,13 @@ function TodoForm() {
     const { addTodo } = useContext(Context);
 
     function handleSubmit() {
-        setTodo({
-            ...todo,
-            id: uuidv4()
-        });
-        addTodo(todo);
+        if (todo.text) {
+            setTodo({
+                ...todo,
+                id: uuidv4()
+            });
+            addTodo(todo);
+        }
     }
 
     function handleChange(e) {
@@ -29,6 +31,7 @@ function TodoForm() {
             [e.target.name]: e.target.value
         });
     }
+
     return (
         <form onSubmit={(e) => e.preventDefault()}>
             <input
@@ -37,6 +40,7 @@ function TodoForm() {
                 name="text"
                 value={todo.text}
                 onChange={handleChange}
+                required
             />
             <span className="datepicker--icon">
                 <DatePicker

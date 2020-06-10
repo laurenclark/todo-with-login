@@ -6,9 +6,6 @@ import { jsx, css } from '@emotion/core';
 
 function Login() {
     const { username, setUsername } = useContext(Context);
-
-    setUsername('Lauren');
-
     return (
         <div
             css={css`

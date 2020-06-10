@@ -42,8 +42,6 @@ function ContextProvider({ children }) {
             entry,
             ...prevItems.slice(itemPosition + 1)
         ]);
-
-        console.log(allTodos);
     }
 
     function removeTodo(id) {
@@ -54,7 +52,6 @@ function ContextProvider({ children }) {
         <Context.Provider
             value={{
                 username,
-                setUsername,
                 allTodos,
                 addTodo,
                 removeTodo,

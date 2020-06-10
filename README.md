@@ -1,5 +1,16 @@
 # New Project
 
+## Todo:
+
+- Update entry on edit
+- Rerun the sort function so that the items get sorted
+- Protected route and login
+- Sort out date formatting (kinda there)
+- Date picker to edit
+- Look at accessibility and testing if time 
+- Text input needs to get the height of the content
+
+
 > ✨ Bootstrapped with Create Snowpack App (CSA).
 
 ## Available Scripts

@@ -10,17 +10,33 @@ const TodoItemStyle = css`
     @media (min-width: 992px) {
         grid-template-columns: 1fr 8fr 4fr 1fr;
     }
+
+    &.completed {
+        opacity: 0.6;
+        input,
+        textarea {
+            text-decoration: line-through;
+        }
+    }
+
     textarea {
         font-size: 1.2rem;
         border: none;
         font-family: sans-serif;
         resize: none;
+        padding: 10px;
     }
 
     .date {
         border: none;
         text-align: center;
         color: gray;
+        font-size: 1.1rem;
+    }
+
+    .datepicker--icon::after {
+        opacity: 0.5;
+        left: 2vw;
     }
 
     .form-control {
@@ -60,7 +76,7 @@ const TodoItemStyle = css`
 
             .checkmark {
                 position: absolute;
-                top: 10px;
+                top: 0;
                 left: 0;
                 height: 25px;
                 width: 25px;

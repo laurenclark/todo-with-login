@@ -33,8 +33,11 @@ function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
     }
 
     return (
-        <li id={entryId} css={TodoItemStyle}>
-            <div className="form-control custom-inputs">
+        <li
+            id={entryId}
+            css={TodoItemStyle}
+            className={entry.complete ? 'completed' : ''}>
+            <div className={`form-control custom-inputs`}>
                 <label>
                     <input
                         checked={entry.complete}
@@ -47,26 +50,29 @@ function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
             </div>
 
             <textarea value={entry.text} name="text" onChange={handleChange} />
-            <DatePicker
-                date={entry.date}
-                onDateChange={(date) =>
-                    setEntry({
-                        ...entry,
-                        date: date
-                    })
-                }
-                format="dd/MM/yyyy"
-                name="date"
-                value={entry.date}
-                locale={enGB}>
-                {({ inputProps, focused }) => (
-                    <input
-                        className={'date input' + (focused ? ' -focused' : '')}
-                        {...inputProps}
-                    />
-                )}
-            </DatePicker>
-
+            <span className="datepicker--icon">
+                <DatePicker
+                    date={entry.date}
+                    onDateChange={(date) =>
+                        setEntry({
+                            ...entry,
+                            date: date
+                        })
+                    }
+                    format="dd/MM/yyyy"
+                    name="date"
+                    value={entry.date}
+                    locale={enGB}>
+                    {({ inputProps, focused }) => (
+                        <input
+                            className={
+                                'date input' + (focused ? ' -focused' : '')
+                            }
+                            {...inputProps}
+                        />
+                    )}
+                </DatePicker>
+            </span>
             <Button
                 bgColor="var(--danger)"
                 hollow={true}

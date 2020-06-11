@@ -227,7 +227,7 @@ input:disabled {
     background-color: transparent;
 }
 
-.css-huxfxn-TodoItem .nice-dates input {
+li .nice-dates input {
     cursor: pointer;
     border: none;
     text-align: center;

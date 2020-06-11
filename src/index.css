@@ -225,6 +225,15 @@ footer {
     grid-row-end: 3;
 }
 
+textarea:disabled,
+input:disabled {
+    background-color: transparent;
+}
+
+.nice-dates input {
+    cursor: pointer;
+}
+
 .datepicker--icon {
     position: relative;
 }

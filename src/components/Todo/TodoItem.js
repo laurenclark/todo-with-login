@@ -49,7 +49,12 @@ function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
                 </label>
             </div>
 
-            <textarea value={entry.text} name="text" onChange={handleChange} />
+            <textarea
+                value={entry.text}
+                name="text"
+                onChange={handleChange}
+                disabled={entry.complete ? 'disabled' : ''}
+            />
             <span className="datepicker--icon">
                 <DatePicker
                     date={entry.date}
@@ -65,6 +70,7 @@ function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
                     locale={enGB}>
                     {({ inputProps, focused }) => (
                         <input
+                            disabled={entry.complete ? 'disabled' : ''}
                             className={
                                 'date input' + (focused ? ' -focused' : '')
                             }

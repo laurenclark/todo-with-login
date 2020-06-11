@@ -169,7 +169,7 @@ code {
 .container {
     margin: 0 auto;
     max-width: 90vw;
-    height: 90vh;
+    height: 100%;
 }
 
 strong {

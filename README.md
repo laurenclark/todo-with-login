@@ -1,15 +1,21 @@
-# New Project
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2387ac3b-a3b0-42ec-869d-e02ab0768a30/deploy-status)](https://app.netlify.com/sites/react-todo-with-login/deploys)
 
-## Todo:
+# React Hooks Todo List 📝 
 
-- Update entry on edit
-- Rerun the sort function so that the items get sorted
-- Protected route and login
-- Sort out date formatting (kinda there)
-- Date picker to edit
-- Look at accessibility and testing if time 
-- Text input needs to get the height of the content
-
+This uses the following:-
+- 💡React Hooks
+- 💡Context API
+- 👩‍🎤Emotion Styled Components (for scoped CSS in JS & Nesting)
+    - I've used a few different combinations to show how it can be used, likely would do it differently in production.
+- 💡UUID for creating ID's to map
+- 💡ES2015+ 
+- 📅 React nice-dates - for datepicker plugin
+- 📅 React date-fns 
+- 💄 Prettier
+- 💬 Babel
+- ❄️ Snowpack (makes dev a bit quicker but uses webpack for production)
+- React Router
+- Netlify and Netlify _redirects
 
 > ✨ Bootstrapped with Create Snowpack App (CSA).
 

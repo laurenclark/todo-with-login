@@ -1,12 +1,10 @@
 /** @jsx jsx */
-import React, { useState, useEffect, useContext } from 'react';
 import { jsx } from '@emotion/core';
-import TodoItemStyle from './styles/TodoItem';
-import Button from '../UI/Button';
+import { useContext, useEffect, useState } from 'react';
 import { Context } from '../../Context';
-import { enGB } from 'date-fns/locale';
-import { DatePicker } from 'react-nice-dates';
-import 'react-nice-dates/build/style.css';
+import Button from '../UI/Button';
+import TodoItemStyle from './styles/TodoItem';
+import CustomDatepicker from './CustomDatepicker';
 
 function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
     const { updateTodo, removeTodo } = useContext(Context);
@@ -25,6 +23,13 @@ function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
         setEntry({
             ...entry,
             [e.target.name]: e.target.value
+        });
+    }
+
+    function handleDate(date) {
+        return setEntry({
+            ...entry,
+            date: date
         });
     }
 
@@ -55,30 +60,7 @@ function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
                 onChange={handleChange}
                 disabled={entry.complete ? 'disabled' : ''}
             />
-            <span className="datepicker--icon">
-                <DatePicker
-                    date={entry.date}
-                    onDateChange={(date) =>
-                        setEntry({
-                            ...entry,
-                            date: date
-                        })
-                    }
-                    format="dd/MM/yyyy"
-                    name="date"
-                    value={entry.date}
-                    locale={enGB}>
-                    {({ inputProps, focused }) => (
-                        <input
-                            disabled={entry.complete ? 'disabled' : ''}
-                            className={
-                                'date input' + (focused ? ' -focused' : '')
-                            }
-                            {...inputProps}
-                        />
-                    )}
-                </DatePicker>
-            </span>
+            <CustomDatepicker date={entry.date} handler={handleDate} />
             <Button
                 bgColor="var(--danger)"
                 hollow={true}

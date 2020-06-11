@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { enGB } from 'date-fns/locale';
-import { DatePicker } from 'react-nice-dates';
-import 'react-nice-dates/build/style.css';
-import Button from '../UI/Button';
 import { Context } from '../../Context';
+import Button from '../UI/Button';
+import CustomDatepicker from './CustomDatepicker';
 
 function TodoForm() {
     const [todo, setTodo] = useState({
@@ -32,6 +30,13 @@ function TodoForm() {
         }
     }
 
+    function handleDate(date) {
+        return setTodo({
+            ...todo,
+            date: date
+        });
+    }
+
     function handleChange(e) {
         setTodo({
             ...todo,
@@ -49,27 +54,7 @@ function TodoForm() {
                 onChange={handleChange}
                 required
             />
-            <span className="datepicker--icon">
-                <DatePicker
-                    date={todo.date}
-                    onDateChange={(date) =>
-                        setTodo({
-                            ...todo,
-                            date: date
-                        })
-                    }
-                    format="dd/MM/yyyy"
-                    name="date"
-                    value={todo.date}
-                    locale={enGB}>
-                    {({ inputProps, focused }) => (
-                        <input
-                            className={'input' + (focused ? ' -focused' : '')}
-                            {...inputProps}
-                        />
-                    )}
-                </DatePicker>
-            </span>
+            <CustomDatepicker date={todo.date} handler={handleDate} />
             <Button
                 size="large"
                 submit={true}

@@ -227,8 +227,10 @@ input:disabled {
     background-color: transparent;
 }
 
-.nice-dates input {
+.css-huxfxn-TodoItem .nice-dates input {
     cursor: pointer;
+    border: none;
+    text-align: center;
 }
 
 .datepicker--icon {

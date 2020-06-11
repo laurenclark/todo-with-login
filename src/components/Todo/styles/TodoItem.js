@@ -27,13 +27,6 @@ const TodoItemStyle = css`
         padding: 10px;
     }
 
-    .date {
-        border: none;
-        text-align: center;
-        color: gray;
-        font-size: 1.1rem;
-    }
-
     .datepicker--icon::after {
         opacity: 0.5;
         left: 2vw;

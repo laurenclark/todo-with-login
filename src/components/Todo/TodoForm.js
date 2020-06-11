@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { enGB } from 'date-fns/locale';
 import { DatePicker } from 'react-nice-dates';
@@ -14,6 +14,14 @@ function TodoForm() {
         complete: false
     });
     const { addTodo } = useContext(Context);
+
+    useEffect(() => {
+        setTodo({
+            ...todo,
+            text: ''
+        });
+    }, [addTodo]);
+
     function handleSubmit() {
         if (todo.text) {
             setTodo({

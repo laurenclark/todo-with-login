@@ -8,7 +8,7 @@ function CustomDatepicker({ date, handler }) {
         <span className="datepicker--icon ">
             <DatePicker
                 date={date}
-                onDateChange={() => handler(date)}
+                onDateChange={(date) => handler(date)}
                 format="dd/MM/yyyy"
                 name="date"
                 value={date}

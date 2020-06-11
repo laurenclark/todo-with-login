@@ -1,11 +1,24 @@
 /** @jsx jsx */
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import Button from './UI/Button';
 import { Context } from '../Context';
+import { useHistory } from 'react-router-dom';
 import { jsx, css } from '@emotion/core';
 
 function Login() {
+    const [text, setText] = useState('');
     const { username, setUsername } = useContext(Context);
+    const history = useHistory();
+
+    function handleChange(e) {
+        setText(event.target.value);
+    }
+
+    function login() {
+        setUsername(text);
+        history.push('/todos');
+    }
+
     return (
         <div
             css={css`
@@ -16,6 +29,7 @@ function Login() {
                 padding: 1rem;
             `}>
             <form
+                onSubmit={(e) => e.preventDefault()}
                 css={css`
                     display: flex;
                     flex-direction: column;
@@ -40,9 +54,13 @@ function Login() {
                     `}
                     placeholder="Username"
                     type="text"
+                    value={text}
+                    name="text"
+                    onChange={handleChange}
                     required
                 />
                 <Button
+                    handler={login}
                     uniqueStyle={{ marginTop: '2rem', padding: '20px 30px' }}
                     bgColor="var(--accent)"
                     size="large">

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const Context = React.createContext();
 
 function ContextProvider({ children }) {
-    const [username, setUsername] = useState('Lauren');
+    const [username, setUsername] = useState('');
     const [allTodos, setTodos] = useState([
         { id: 1, text: 'Eat breakfast', date: new Date(), complete: false },
         { id: 2, text: 'Do laundry', date: new Date(), complete: false },

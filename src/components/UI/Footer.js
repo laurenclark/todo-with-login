@@ -12,7 +12,7 @@ function Footer() {
     return (
         <footer>
             <span css={style}>
-                Made with ❤ by
+                Made with ❤ by&nbsp;
                 <a href="https://github.com/laurenclark">laurenclark</a>
             </span>
         </footer>

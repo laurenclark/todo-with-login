@@ -31,11 +31,7 @@ function ContextProvider({ children }) {
     }
 
     function updateTodo(entry) {
-        const itemPosition = allTodos
-            .map(function (x) {
-                return x.id;
-            })
-            .indexOf(entry.id);
+        const itemPosition = allTodos.map((x) => x.id).indexOf(entry.id);
 
         setTodos((prevItems) => [
             ...prevItems.slice(0, itemPosition),

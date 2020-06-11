@@ -3,18 +3,18 @@
 # React Hooks Todo List 📝 
 
 This uses the following:-
-- 💡React Hooks
-- 💡Context API
+- 💡React Hooks (Functional > OOP)
+- 💡Context API (As an alternative for Redux - for small things like this Redux is a bit overkill)
 - 👩‍🎤Emotion Styled Components (for scoped CSS in JS & Nesting)
     - I've used a few different combinations to show how it can be used, likely would do it differently in production.
 - 💡UUID for creating ID's to map
-- 💡ES2015+ 
-- 📅 React nice-dates - for datepicker plugin
-- 📅 React date-fns 
-- 💄 Prettier
-- 💬 Babel
+- 💡ES2015+ (No need for Lodash, Ramda etc for something this small)
+- 📅 React nice-dates - for datepicker plugin (really good UI and API)
+- 📅 React date-fns (prefer over Moment.js as its more functional)
+- 💄 Prettier (For formatting)
+- 💬 Babel 
 - ❄️ Snowpack (makes dev a bit quicker but uses webpack for production)
-- React Router
+- React Router 5.1 
 - Netlify and Netlify _redirects
 
 > ✨ Bootstrapped with Create Snowpack App (CSA).

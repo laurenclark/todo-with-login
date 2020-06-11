@@ -10,7 +10,7 @@ This uses the following:-
 - 💡UUID for creating ID's to map
 - 💡ES2015+ (No need for Lodash, Ramda etc for something this small)
 - 📅 React nice-dates - for datepicker plugin (really good UI and API)
-- 📅 React date-fns (prefer over Moment.js as its more functional)
+- 📅 React date-fns (prefer over Moment.js as its more functional, better performance)
 - 💄 Prettier (For formatting)
 - 💬 Babel 
 - ❄️ Snowpack (makes dev a bit quicker but uses webpack for production)

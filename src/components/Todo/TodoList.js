@@ -1,16 +1,12 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { PropTypes } from 'prop-types';
 import { useContext } from 'react';
 import { Context } from '../../Context';
 import TodoListStyle from './styles/TodoList';
 import TodoItem from './TodoItem';
 
 function TodoList() {
-    const { allTodos, sortTodos } = useContext(Context);
-
-    const sortedTodos = sortTodos(allTodos);
-
+    const { allTodos } = useContext(Context);
     return (
         <ul css={TodoListStyle}>
             {allTodos.map(({ id, text, date, complete }) => (

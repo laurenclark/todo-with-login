@@ -15,8 +15,10 @@ function Login() {
     }
 
     function login() {
-        setUsername(text);
-        history.push('/todos');
+        if (text) {
+            setUsername(text);
+            history.push('/todos');
+        }
     }
 
     return (

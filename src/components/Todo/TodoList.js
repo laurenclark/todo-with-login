@@ -4,6 +4,7 @@ import { jsx } from '@emotion/core';
 import TodoItem from './TodoItem';
 import TodoListStyle from './styles/TodoList';
 import { Context } from '../../Context';
+import { PropTypes } from 'prop-types';
 
 function TodoList() {
     const { allTodos, sortTodos } = useContext(Context);
@@ -27,5 +28,12 @@ function TodoList() {
         </ul>
     );
 }
+
+TodoList.propTypes = {
+    id: PropTypes.number.isRequired,
+    text: PropTypes.string.isRequired,
+    date: PropTypes.object.isRequired,
+    complete: PropTypes.bool.isRequired
+};
 
 export default TodoList;

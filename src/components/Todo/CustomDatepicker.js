@@ -2,6 +2,7 @@ import React from 'react';
 import { enGB } from 'date-fns/locale';
 import { DatePicker } from 'react-nice-dates';
 import 'react-nice-dates/build/style.css';
+import { PropTypes } from 'prop-types';
 
 function CustomDatepicker({ date, handler }) {
     return (
@@ -23,5 +24,9 @@ function CustomDatepicker({ date, handler }) {
         </span>
     );
 }
+CustomDatepicker.propTypes = {
+    date: PropTypes.object.isRequired,
+    handler: PropTypes.func
+};
 
 export default CustomDatepicker;

@@ -2,6 +2,7 @@
 import { jsx } from '@emotion/core';
 import { useContext, useEffect, useState } from 'react';
 import { Context } from '../../Context';
+import { PropTypes } from 'prop-types';
 import Button from '../UI/Button';
 import TodoItemStyle from './styles/TodoItem';
 import CustomDatepicker from './CustomDatepicker';
@@ -70,5 +71,12 @@ function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
         </li>
     );
 }
+
+TodoItem.propTypes = {
+    entryDate: PropTypes.object.isRequired,
+    entryText: PropTypes.string.isRequired,
+    entryId: PropTypes.number.isRequired,
+    entryComplete: PropTypes.bool.isRequired
+};
 
 export default TodoItem;

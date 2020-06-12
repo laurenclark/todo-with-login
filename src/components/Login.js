@@ -7,7 +7,7 @@ import { jsx, css } from '@emotion/core';
 
 function Login() {
     const [text, setText] = useState('');
-    const { username, setUsername } = useContext(Context);
+    const { setUsername } = useContext(Context);
     const history = useHistory();
 
     function handleChange(e) {

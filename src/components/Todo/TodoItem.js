@@ -58,13 +58,9 @@ function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
                 value={entry.text}
                 name="text"
                 onChange={handleChange}
-                disabled={entry.complete}
+                disabled={entry.complete ? 'disabled' : ''}
             />
-            <CustomDatepicker
-                date={entry.date}
-                handler={handleDate}
-                disabledState={true}
-            />
+            <CustomDatepicker date={entry.date} handler={handleDate} />
             <Button
                 bgColor="var(--danger)"
                 hollow={true}

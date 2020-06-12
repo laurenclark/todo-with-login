@@ -6,18 +6,22 @@ import TodoListStyle from './styles/TodoList';
 import TodoItem from './TodoItem';
 
 function TodoList() {
-    const { allTodos } = useContext(Context);
+    const { allTodos, sortTodos } = useContext(Context);
+
+    const sortedTodos = sortTodos(allTodos);
+
     return (
         <ul css={TodoListStyle}>
-            {allTodos.map(({ id, text, date, complete }) => (
-                <TodoItem
-                    key={id}
-                    entryId={id}
-                    entryText={text}
-                    entryDate={date}
-                    entryComplete={complete}
-                />
-            ))}
+            {sortedTodos &&
+                sortedTodos.map(({ id, text, date, complete }) => (
+                    <TodoItem
+                        key={id}
+                        entryId={id}
+                        entryText={text}
+                        entryDate={date}
+                        entryComplete={complete}
+                    />
+                ))}
             {allTodos.length === 0 && <h2>Nothing To Do 🎉</h2>}
         </ul>
     );

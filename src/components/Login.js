@@ -11,7 +11,7 @@ function Login() {
     const history = useHistory();
 
     function handleChange(e) {
-        setText(event.target.value);
+        setText(e.target.value);
     }
 
     function login() {

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { PropTypes } from 'prop-types';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState, useRef } from 'react';
 import { Context } from '../../Context';
 import Button from '../UI/Button';
 import CustomDatepicker from './CustomDatepicker';
@@ -9,6 +9,7 @@ import TodoItemStyle from './styles/TodoItem';
 
 function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
     const { updateTodo, removeTodo } = useContext(Context);
+    const [text, setText] = useState(entryText);
     const [entry, setEntry] = useState({
         id: entryId,
         text: entryText,
@@ -21,10 +22,7 @@ function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
     }, [entry]);
 
     function handleChange(e) {
-        setEntry({
-            ...entry,
-            [e.target.name]: e.target.value
-        });
+        setText(e.target.value);
     }
 
     function handleDate(date) {
@@ -32,6 +30,17 @@ function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
             ...entry,
             date: date
         });
+    }
+
+    const textRef = useRef(null);
+    function handleKeyDown(e) {
+        if (e.keyCode === 13) {
+            textRef.current.blur();
+            setEntry({
+                ...entry,
+                [e.target.name]: text
+            });
+        }
     }
 
     function toggleComplete() {
@@ -56,10 +65,12 @@ function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
             </div>
 
             <textarea
-                value={entry.text}
+                value={text}
                 name="text"
                 onChange={handleChange}
                 disabled={entry.complete ? 'disabled' : ''}
+                onKeyDown={handleKeyDown}
+                ref={textRef}
             />
             <CustomDatepicker
                 date={entry.date}

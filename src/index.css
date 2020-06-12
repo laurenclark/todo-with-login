@@ -228,9 +228,12 @@ input:disabled {
 }
 
 li .nice-dates input {
-    cursor: pointer;
     border: none;
     text-align: center;
+}
+.nice-dates input {
+    cursor: pointer;
+    background: transparent;
 }
 
 .datepicker--icon {
@@ -245,6 +248,7 @@ li .nice-dates input {
     width: 25px;
     right: 10px;
     top: 8px;
+    z-index: -1;
     display: inline-block;
 }
 

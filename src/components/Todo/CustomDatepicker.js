@@ -4,7 +4,8 @@ import React from 'react';
 import { DatePicker } from 'react-nice-dates';
 import 'react-nice-dates/build/style.css';
 
-function CustomDatepicker({ date, handler }) {
+function CustomDatepicker({ date, handler, complete }) {
+    console.log(complete);
     return (
         <span className="datepicker--icon ">
             <DatePicker
@@ -16,6 +17,7 @@ function CustomDatepicker({ date, handler }) {
                 locale={enGB}>
                 {({ inputProps, focused }) => (
                     <input
+                        disabled={complete}
                         className={'input' + (focused ? ' -focused' : '')}
                         {...inputProps}
                     />

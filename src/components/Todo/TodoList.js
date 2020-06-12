@@ -13,27 +13,18 @@ function TodoList() {
 
     return (
         <ul css={TodoListStyle}>
-            {allTodos &&
-                sortedTodos &&
-                sortedTodos.map(({ id, text, date, complete }) => (
-                    <TodoItem
-                        key={id}
-                        entryId={id}
-                        entryText={text}
-                        entryDate={date}
-                        entryComplete={complete}
-                    />
-                ))}
+            {allTodos.map(({ id, text, date, complete }) => (
+                <TodoItem
+                    key={id}
+                    entryId={id}
+                    entryText={text}
+                    entryDate={date}
+                    entryComplete={complete}
+                />
+            ))}
             {allTodos.length === 0 && <h2>Nothing To Do 🎉</h2>}
         </ul>
     );
 }
-
-TodoList.propTypes = {
-    id: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired,
-    date: PropTypes.object.isRequired,
-    complete: PropTypes.bool.isRequired
-};
 
 export default TodoList;

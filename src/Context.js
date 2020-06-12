@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { endOfYesterday } from 'date-fns';
 
 const Context = React.createContext();
 
@@ -17,22 +18,22 @@ function ContextProvider({ children }) {
 
     function sortTodos(todos) {
         return todos
-            .sort(function (a, b) {
+            .sort(function sortByDateAsc(a, b) {
                 if (a.date > b.date) return -1;
                 if (a.date < b.date) return 1;
             })
-            .sort(function (a, b) {
+            .sort(function sortByCompletedAsc(a, b) {
                 if (a.complete > b.complete) return -1;
                 if (a.complete < b.complete) return 1;
             });
     }
 
-    function addTodo(newItem) {
-        setTodos((prevItems) => [...prevItems, newItem]);
+    function addTodo(entry) {
+        setTodos((prevItems) => [...prevItems, entry]);
     }
 
     function updateTodo(entry) {
-        const itemPosition = allTodos.map((x) => x.id).indexOf(entry.id);
+        const itemPosition = allTodos.map((item) => item.id).indexOf(entry.id);
 
         setTodos((prevItems) => [
             ...prevItems.slice(0, itemPosition),

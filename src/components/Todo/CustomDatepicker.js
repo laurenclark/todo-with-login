@@ -3,7 +3,7 @@ import { enGB } from 'date-fns/locale';
 import { DatePicker } from 'react-nice-dates';
 import 'react-nice-dates/build/style.css';
 
-function CustomDatepicker({ date, handler }) {
+function CustomDatepicker({ date, handler, disabledState }) {
     return (
         <span className="datepicker--icon ">
             <DatePicker
@@ -15,6 +15,7 @@ function CustomDatepicker({ date, handler }) {
                 locale={enGB}>
                 {({ inputProps, focused }) => (
                     <input
+                        disabled={disabledState}
                         className={'input' + (focused ? ' -focused' : '')}
                         {...inputProps}
                     />

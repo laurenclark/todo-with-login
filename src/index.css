@@ -235,6 +235,7 @@ li .nice-dates input {
 
 .datepicker--icon {
     position: relative;
+    /* z-index: -1; */
 }
 
 .datepicker--icon::after {

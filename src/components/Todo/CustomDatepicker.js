@@ -5,7 +5,6 @@ import { DatePicker } from 'react-nice-dates';
 import 'react-nice-dates/build/style.css';
 
 function CustomDatepicker({ date, handler, complete }) {
-    console.log(complete);
     return (
         <span className="datepicker--icon ">
             <DatePicker

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import Button from './Button';
 import { jsx, css } from '@emotion/core';
 import { useHistory } from 'react-router-dom';

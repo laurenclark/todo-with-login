@@ -1,8 +1,8 @@
-import React from 'react';
 import { enGB } from 'date-fns/locale';
+import { PropTypes } from 'prop-types';
+import React from 'react';
 import { DatePicker } from 'react-nice-dates';
 import 'react-nice-dates/build/style.css';
-import { PropTypes } from 'prop-types';
 
 function CustomDatepicker({ date, handler }) {
     return (

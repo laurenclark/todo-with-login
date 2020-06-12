@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
+import { PropTypes } from 'prop-types';
 import { useContext, useEffect, useState } from 'react';
 import { Context } from '../../Context';
-import { PropTypes } from 'prop-types';
 import Button from '../UI/Button';
-import TodoItemStyle from './styles/TodoItem';
 import CustomDatepicker from './CustomDatepicker';
+import TodoItemStyle from './styles/TodoItem';
 
 function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
     const { updateTodo, removeTodo } = useContext(Context);

@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import React from 'react';
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 import { PropTypes } from 'prop-types';
 
 function Button({

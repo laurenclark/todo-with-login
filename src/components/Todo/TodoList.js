@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import React, { useContext } from 'react';
 import { jsx } from '@emotion/core';
-import TodoItem from './TodoItem';
-import TodoListStyle from './styles/TodoList';
-import { Context } from '../../Context';
 import { PropTypes } from 'prop-types';
+import { useContext } from 'react';
+import { Context } from '../../Context';
+import TodoListStyle from './styles/TodoList';
+import TodoItem from './TodoItem';
 
 function TodoList() {
     const { allTodos, sortTodos } = useContext(Context);

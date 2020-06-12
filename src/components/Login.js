@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import React, { useState, useContext } from 'react';
-import Button from './UI/Button';
-import { Context } from '../Context';
+import { css, jsx } from '@emotion/core';
+import { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { jsx, css } from '@emotion/core';
+import { Context } from '../Context';
+import Button from './UI/Button';
 
 function Login() {
     const [text, setText] = useState('');

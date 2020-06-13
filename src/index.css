@@ -222,17 +222,22 @@ footer {
     grid-row-end: 3;
 }
 
+.nice-dates input {
+    cursor: pointer;
+}
+
 textarea:disabled,
 input:disabled {
     background-color: transparent;
+    cursor: not-allowed;
 }
 
 li .nice-dates input {
     border: none;
     text-align: center;
 }
+
 .nice-dates input {
-    cursor: pointer;
     background: transparent;
 }
 

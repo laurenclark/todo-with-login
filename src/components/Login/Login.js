@@ -2,8 +2,8 @@
 import { css, jsx } from '@emotion/core';
 import { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Context } from '../Context';
-import Button from './UI/Button';
+import { Context } from '../../Context';
+import Button from '../UI/Button';
 
 function Login() {
     const [text, setText] = useState('');

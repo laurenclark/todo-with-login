@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { endOfYesterday } from 'date-fns';
 
 const Context = React.createContext();
 

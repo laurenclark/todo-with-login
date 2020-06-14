@@ -1,13 +1,10 @@
 /** @jsx jsx */
-import { useContext } from 'react';
 import Button from './Button';
+import useLogin from '../Login/useLogin';
 import { jsx, css } from '@emotion/core';
-import { useHistory } from 'react-router-dom';
-import { Context } from '../../Context';
 
-function Header({ username }) {
-    const history = useHistory();
-    const { setUsername } = useContext(Context);
+function Header() {
+    const { username, logout } = useLogin();
     const headerStyle = css({
         background: 'whitesmoke',
         borderBottom: '2px solid #ededed',
@@ -23,11 +20,6 @@ function Header({ username }) {
             margin: '0 10px'
         }
     });
-
-    function logout() {
-        setUsername('');
-        history.push('/');
-    }
 
     return (
         <header css={headerStyle}>

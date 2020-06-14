@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 const Context = React.createContext();
 
 function ContextProvider({ children }) {
@@ -48,13 +47,13 @@ function ContextProvider({ children }) {
     return (
         <Context.Provider
             value={{
-                username,
                 allTodos,
                 addTodo,
                 removeTodo,
                 sortTodos,
-                setUsername,
-                updateTodo
+                updateTodo,
+                username,
+                setUsername
             }}>
             {children}
         </Context.Provider>

@@ -1,24 +1,14 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
-import { useContext, useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { Context } from '../../Context';
+import React, { useState } from 'react';
 import Button from '../UI/Button';
+import useLogin from './useLogin';
 
 function Login() {
     const [text, setText] = useState('');
-    const { setUsername } = useContext(Context);
-    const history = useHistory();
-
+    const { login } = useLogin();
     function handleChange(e) {
         setText(e.target.value);
-    }
-
-    function login() {
-        if (text) {
-            setUsername(text);
-            history.push('/todos');
-        }
     }
 
     return (
@@ -62,7 +52,7 @@ function Login() {
                     required
                 />
                 <Button
-                    handler={login}
+                    handler={() => login(text)}
                     uniqueStyle={{ marginTop: '2rem', padding: '20px 30px' }}
                     bgColor="var(--accent)"
                     size="large">

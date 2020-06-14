@@ -90,7 +90,7 @@ function TodoItem({ entryDate, entryText, entryId, entryComplete }) {
 TodoItem.propTypes = {
     entryDate: PropTypes.object.isRequired,
     entryText: PropTypes.string.isRequired,
-    entryId: PropTypes.number.isRequired,
+    entryId: PropTypes.string.isRequired,
     entryComplete: PropTypes.bool.isRequired
 };
 

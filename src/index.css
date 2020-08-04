@@ -259,7 +259,7 @@ li .nice-dates input {
 
 @media only screen and (min-width: 500px) {
     form {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+        grid-template-columns: repeat(1, minmax(300px, 3fr));
     }
 }
 
@@ -267,10 +267,12 @@ li .nice-dates input {
     .container {
         max-width: 80vw;
     }
+
     form {
         grid-template-columns: repeat(auto-fit, minmax(500px, 3fr));
     }
 }
+
 @media only screen and (min-width: 992px) {
     .container {
         max-width: 1000px;

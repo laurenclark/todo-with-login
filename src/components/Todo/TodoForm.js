@@ -9,14 +9,14 @@ function TodoForm() {
         id: uuidv4(),
         text: '',
         date: new Date(),
-        complete: false
+        complete: false,
     });
     const { addTodo } = useContext(Context);
 
     useEffect(() => {
         setTodo({
             ...todo,
-            text: ''
+            text: '',
         });
     }, [addTodo]);
 
@@ -24,7 +24,7 @@ function TodoForm() {
         if (todo.text) {
             setTodo({
                 ...todo,
-                id: uuidv4()
+                id: uuidv4(),
             });
             addTodo(todo);
         }
@@ -33,14 +33,14 @@ function TodoForm() {
     function handleDate(date) {
         return setTodo({
             ...todo,
-            date: date
+            date: date,
         });
     }
 
     function handleChange(e) {
         setTodo({
             ...todo,
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value,
         });
     }
 

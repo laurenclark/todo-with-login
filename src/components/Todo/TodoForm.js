@@ -33,7 +33,7 @@ function TodoForm() {
     function handleDate(date) {
         return setTodo({
             ...todo,
-            date: date,
+            date,
         });
     }
 

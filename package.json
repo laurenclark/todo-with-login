@@ -13,7 +13,7 @@
         "@snowpack/plugin-babel": "^1.0.0",
         "@snowpack/plugin-webpack": "^1.1.5",
         "date-fns": "^2.14.0",
-        "elliptic": "^6.5.3",
+        "elliptic": "^6.5.4",
         "lodash": "^4.17.19",
         "prop-types": "^15",
         "react": "^16.13.0",

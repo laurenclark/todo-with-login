@@ -10,22 +10,22 @@ function Header() {
         borderBottom: '2px solid #ededed',
         display: 'flex',
         flexFlow: 'row-reverse',
-        padding: '5px 20px'
+        padding: '5px 20px',
     });
 
     const divStyle = css({
         display: 'flex',
         alignItems: 'center',
         '& p': {
-            margin: '0 10px'
-        }
+            margin: '0 10px',
+        },
     });
 
     return (
         <header css={headerStyle}>
             <div css={divStyle}>
                 <img
-                    src="https://icon.now.sh/account_circle/48/9fadbb"
+                    src="https://microicon-clone.vercel.app/account_circle/48/9fadbb"
                     alt=""
                 />
                 <p>

@@ -27,7 +27,7 @@ function CustomDatepicker({ date, handler, complete }) {
 }
 CustomDatepicker.propTypes = {
     date: PropTypes.object.isRequired,
-    handler: PropTypes.func
+    handler: PropTypes.func,
 };
 
 export default CustomDatepicker;
